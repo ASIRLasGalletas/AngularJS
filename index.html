@@ -1,0 +1,35 @@
+<html ng-app="gemStore">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap.js"></script>
+    <script type="text/javascript" src="products.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+
+  <body ng-controller="StoreController as store">
+    <!--  Encabezado de web  -->
+    <header>
+      <h1 class="text-center">Piedras preciosas hechas a mano</h1>
+      <h2 class="text-center">– Una tienda de AngularJS –</h2>
+    </header>
+
+    <!--  Contenedor de productos  -->
+    <div class="list-group">
+      <!--  Contendor de producto  -->
+      <div class="list-group-item" ng-repeat="product in store.products">
+        <h3>{{product.name}} <em class="pull-right">{{product.price | currency:""}} &euro; </em></h3>
+
+        <!-- Galería de imágenes -->
+        <product-gallery></product-gallery>
+
+        <!-- Fichas de producto  -->
+        <product-tabs></product-tabs>
+      </div>
+
+    </div>
+  </body>
+</html>

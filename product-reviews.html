@@ -1,0 +1,36 @@
+<!--  Lista de comentarios -->
+<ul>
+  <li ng-repeat="review in product.reviews">
+    <blockquote>
+      <strong>{{review.stars}} Estrellas</strong> "{{review.body}}"
+      <cite class="clearfix">- {{review.author}} (<i>{{review.createdOn | date : "dd/MM/yyyy 'a las' HH:mm:ss"}}</i>)</cite>
+    </blockquote>
+  </li>
+</ul>
+
+<!--  Formulario para el comentario -->
+<form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+
+  <!--  Comentario Live -->
+  <blockquote>
+    <strong ng-show="reviewCtrl.review.stars">{{reviewCtrl.review.stars}} Estrellas</strong><cite ng-show="reviewCtrl.review.body"> "{{reviewCtrl.review.body}}"</cite>
+    <cite class="clearfix" ng-show="reviewCtrl.review.author">- {{reviewCtrl.review.author}}</cite>
+  </blockquote>
+
+  <!--  Formulario -->
+  <h4>Sube tu comentario</h4>
+  <fieldset class="form-group">
+    <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Estrellas" required>
+      <option value>Valora el producto</option>
+    </select>
+  </fieldset>
+  <fieldset class="form-group">
+    <input ng-model="reviewCtrl.review.body" class="form-control" placeholder="Escribe aquí tu comentario" title="Comentario" required></input>
+  </fieldset>
+  <fieldset class="form-group">
+    <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="daniel@ejemplo.org" title="Email" required/>
+  </fieldset>
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Subir comentario" />
+  </fieldset>
+</form>

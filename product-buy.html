@@ -1,0 +1,39 @@
+<!--  Formulario de compra -->
+<form name="buyForm" ng-controller="BuyController as buyCtrl" ng-submit="buyForm.$valid && buyCtrl.addBuy(product)" novalidate>
+  <!--  Compra Live -->
+  <blockquote>
+    <strong ng-show="buyCtrl.buy.user">{{buyCtrl.buy.user}}</strong>
+    <cite class="clearfix" ng-show="buyCtrl.buy.userDir">Dirección: {{buyCtrl.buy.userDir}}</cite>
+	<cite class="clearfix" ng-show="buyCtrl.buy.card">Número de tarjeta: {{buyCtrl.buy.card}}</cite>
+	<cite class="clearfix" ng-show="buyCtrl.buy.cardMonth && buyCtrl.buy.cardYear">Caducidad: {{buyCtrl.buy.cardMonth}} de {{buyCtrl.buy.cardYear}} </cite>
+  </blockquote>
+  
+  <!--  Formulario -->
+  <h4>Compra ahora esta gema</h4>
+  <fieldset class="form-group">
+    <input ng-model="buyCtrl.buy.user" class="form-control" placeholder="Titular de la cuenta" title="Titular" required></input>
+  </fieldset>
+  <fieldset class="form-group">
+    <input ng-model="buyCtrl.buy.userDir" class="form-control" placeholder="Dirección de entrega" title="Dirección" required></input>
+  </fieldset>
+  <fieldset class="form-group">
+    <input ng-model="buyCtrl.buy.card" class="form-control" placeholder="Escribe aquí el número de la tarjeta" title="Número" required></input>
+  </fieldset>
+  <fieldset class="form-group">
+    <select ng-model="buyCtrl.buy.cardMonth" class="form-control form-control-small" ng-options="month for month in ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']" title="Mes" required>
+      <option value>Introduzca el mes</option>
+    </select>
+	<select ng-model="buyCtrl.buy.cardYear" class="form-control form-control-small" ng-options="year for year in [2015,2016,2017,2018,2019,2020]" title="Año" required>
+      <option value>Introduzca el año</option>
+    </select>
+	<input ng-model="buyCtrl.buy.cardSecurity" class="form-control form-control-small" placeholder="Introduzca código de seguridad" title="Seguridad" required></input>
+  </fieldset>
+  <fieldset class="form-group">
+    <input type="submit" class="btn btn-primary pull-right" value="Efectuar compra"/>
+  </fieldset>
+  <!--<div class="alert alert-success" ng-show="buyForm.$valid">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    Gracias por su compra, pronto recibirá su pedido en la dirección indicada.
+  </div>-->
+</form>
+

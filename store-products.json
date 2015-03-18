@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Piedra de Sangre",
+    "description": "El origen del Piedra de Sangre se desconoce, por lo tanto su valor bajo. No obstante tiene un brillo muy alto y 12 lados.",
+    "shine": 19,
+    "price": 29.95,
+    "rarity": 1,
+    "hardness": 4,
+    "faces": 12,
+    "images": [
+      "images/gem-02.gif",
+      "images/gem-01.gif",
+      "images/gem-03.gif"
+    ],
+    "reviews": [{
+        "stars": 1,
+        "body": "Esperaba un poco más por ese precio, no la compréis.",
+        "author": "dGomez@gmail.com",
+        "createdOn": 1395485782839
+      }, {
+        "stars": 2,
+        "body": "No es muy buena, yo compraría otra.",
+        "author": "lPerez@gmail.com",
+        "createdOn": 1397247960847
+      }]
+  },
+  {
+    "name": "Azurita",
+    "description": "Algunas gemas han ocultado cualidades más allá de su lustre, más allá de su brillo... Azurita es una de esas joyas.",
+    "shine": 37,
+    "price": 89.95,
+    "rarity": 4,
+    "hardness": 8,
+    "faces": 14,
+    "images": [
+      "images/gem-09.gif",
+      "images/gem-04.gif",
+      "images/gem-05.gif"
+    ],
+    "reviews": [{
+        "stars": 4,
+        "body": "Me gusta esta gema, queda muy bien en la vitrina junto a las demás.",
+        "author": "jCarlos@gmail.com",
+        "createdOn": 1395495980839
+      }, {
+        "stars": 5,
+        "body": "Su color en determinados espectros de luz es impresionante, te deja totalmente desconectado sin poder pensar en nada más.",
+        "author": "aLopez@gmail.com",
+        "createdOn": 1397197960842
+      }]
+  },
+  {
+    "name": "Zirconio",
+    "description": "El Zirconio es una de la joyas más codiciadas y buscadas. Tendremos que pagar mucho dinero para ser el orgulloso dueño de ella.",
+    "shine": 70,
+    "price": 499.95,
+    "rarity": 9,
+    "hardness": 10,
+    "faces": 32,
+    "images": [
+      "images/gem-06.gif",
+      "images/gem-10.gif",
+      "images/gem-07.gif"
+    ],
+    "reviews": [{
+        "stars": 5,
+        "body": "La belleza de esta joya es solo comparable con su precio.",
+        "author": "rRodriguez@gmail.com",
+        "createdOn": 1395476782839
+      }]
+  }
+]
