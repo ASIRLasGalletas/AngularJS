@@ -1,0 +1,9 @@
+angularjs_homepagetmp:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'angularjsBundle:Default:index.html.twig'
+
+angularjs_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: angularjsBundle:Default:index }
