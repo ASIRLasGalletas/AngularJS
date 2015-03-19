@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html{% if ngHtmlApp is defined %} ng-app="{{ ngHtmlApp }}"{% endif %}>
   <head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" />
-    {% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% block title %}{% endblock %}
+    {% block stylesheets %}{% endblock %}
   </head>
   <body{% if ngBodyCtrl is defined %} ng-controller="{{ ngBodyCtrl }}"{% endif %}>
     {% block body %}{% endblock %}

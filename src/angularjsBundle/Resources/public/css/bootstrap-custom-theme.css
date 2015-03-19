@@ -1,47 +1,43 @@
 /* CSS Específico */
-html {
-  overflow-x:hidden;
+html{
+	overflow-x:hidden;
 }
-
-body {
+body{
   max-width: 800px;
   margin: 0 auto;
 }
-
-h2 {
+h2{
   font-size:22px;
 }
-
 a {
   color: #FF8000;
 }
-
 a:hover,
 a:focus {
   text-decoration: underline;
 }
 
-ul {
+ul{
   padding: 0;
 }
 
-li {
+li{
   list-style: none;
 }
 
-li.small-image {
+li.small-image{
   width: 50px;
 }
 
-li.small-image img:hover {
+li.small-image img:hover{
   width: 100px;
 }
 
-li.small-image img {
+li.small-image img{
   width: 100%;
 }
 
-img {
+img{
   max-width: 230px;
   max-height: 230px;
 }
@@ -103,43 +99,39 @@ img {
   background: #FAAC58;
 }
 
-.ng-invalid.ng-dirty {
+.ng-invalid.ng-dirty{
     border-color: red;
 }
-.ng-valid.ng-dirty {
+.ng-valid.ng-dirty{
     border-color: green;
 }
 
-.form-control-small {
-  float:left;
-  width:256px;
+.form-control-small{
+	float:left;
+	width:256px;
 }
 
 /* CSS Responsive para pantallas menores a 820px */
-@media screen and (max-width:820px) {
-  .form-control-small{
-    width:100%;
-    margin-bottom: 15px;
-  }
+@media screen and (max-width:820px){
+.form-control-small{
+	width:100%;
+	margin-bottom: 15px;
 }
-
+}
 /* CSS Responsive para pantallas menores a 500px */
-@media screen and (max-width:500px) {
-  .nav-pills {
-    margin-bottom: 30px;
-    width:100%;
-  }
-
-  .nav-pills li {
-    width:100%;
-    text-align:center;
-  }
-
-  h2{
-    font-size:20px;
-  }
-
-  .btn-primary {
-    width:100%;
-  }
+@media screen and (max-width:500px){
+.nav-pills {
+  margin-bottom: 30px;
+  width:100%;
+}
+.nav-pills li{
+  width:100%;
+  text-align:center;
+}
+h2{
+  font-size:20px;
+}
+.btn-primary{
+	width:100%;
+}
 }

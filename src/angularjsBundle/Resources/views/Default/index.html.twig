@@ -4,10 +4,19 @@
 {% set ngHtmlApp = 'gemStore' %}
 {% set ngBodyCtrl = 'StoreController as store' %}
 
-{% block title %}Piedras preciosas hechas a mano{% endblock %}
+{% block charset %}
+<meta charset="UTF-8" />
+{% endblock %}
+
+{% block title %}
+<title>Tienda de piedras</title>
+{% endblock %}
 
 {% block stylesheets %}{{ parent() }}
-  <link rel="stylesheet" href="{{ asset('/bundles/angularjs/css/bootstrap-custom-theme.css') }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/angularjs/css/bootstrap-min.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/angularjs/css/bootstrap-custom-theme.css') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ asset('/bundles/angularjs/images/favicon.ico') }}" />
 {% endblock %}
 
 {% block javascripts %}{{ parent() }}
@@ -37,7 +46,7 @@
   </aside>
   <!--  Encabezado de web  -->
   <header>
-    <h1 class="text-center">{{ block('title') }}</h1>
+    <h1 class="text-center">Piedras preciosas hechas a mano</h1>
     <h2 class="text-center">– Una tienda de AngularJS –</h2>
   </header>
   <!--  Contenedor de productos  -->
