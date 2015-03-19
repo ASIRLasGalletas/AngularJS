@@ -6,16 +6,16 @@
 
 {% block title %}Piedras preciosas hechas a mano{% endblock %}
 
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="/bundles/angularjs/css/bootstrap-custom-theme.css" />
+{% block stylesheets %}{{ parent() }}
+  <link rel="stylesheet" href="{{ asset('/bundles/angularjs/css/bootstrap-custom-theme.css') }}" />
 {% endblock %}
 
-{% block javascripts %}
-    {{ parent() }}
-    <!-- App JavaScript -->
-    <script type="text/javascript" src="/bundles/angularjs/js/products.js"></script>
-    <script type="text/javascript" src="/bundles/angularjs/js/app.js"></script>
+{% block javascripts %}{{ parent() }}
+  <!-- App JavaScript -->
+  <script type="text/javascript" src="{{ asset('/bundles/angularjs/js/products.js') }}">
+  </script>
+  <script type="text/javascript" src="{{ asset('/bundles/angularjs/js/app.js') }}">
+  </script>
 {% endblock %}
 
 {% block body %}
@@ -50,8 +50,8 @@
       <!-- Galería de imágenes -->
       <product-gallery></product-gallery>
 
-            <!-- Fichas de producto  -->
-            <product-tabs></product-tabs>
-        </div>
+      <!-- Fichas de producto  -->
+      <product-tabs></product-tabs>
     </div>
+  </div>
 {% endblock %}
