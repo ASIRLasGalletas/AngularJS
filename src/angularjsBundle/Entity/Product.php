@@ -5,12 +5,12 @@ namespace angularjsBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * GemProduct
+ * Product
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class GemProduct
+class Product
 {
     /**
      * @var integer
@@ -71,14 +71,12 @@ class GemProduct
     private $faces;
 
     /**
-     * @var array
-     *
-     * @ORM\Column(name="images", type="array")
+     * @ORM\ManyToMany(targetEntity="ProductImage", mappedBy="product")
      */
     private $images;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Review", mappedBy="gemproduct")
+     * @ORM\ManyToMany(targetEntity="Review", mappedBy="product")
      */
     private $reviews;
 
@@ -313,5 +311,28 @@ class GemProduct
     public function getReviews()
     {
         return $this->reviews;
+    }
+
+    /**
+     * Add images
+     *
+     * @param \angularjsBundle\Entity\ProductImage $images
+     * @return Product
+     */
+    public function addImage(\angularjsBundle\Entity\ProductImage $images)
+    {
+        $this->images[] = $images;
+
+        return $this;
+    }
+
+    /**
+     * Remove images
+     *
+     * @param \angularjsBundle\Entity\ProductImage $images
+     */
+    public function removeImage(\angularjsBundle\Entity\ProductImage $images)
+    {
+        $this->images->removeElement($images);
     }
 }

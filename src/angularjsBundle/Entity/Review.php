@@ -50,10 +50,10 @@ class Review
     private $created;
 
     /**
-     * @ORM\ManyToOne(targetEntity="GemProduct", inversedBy="reviews")
-     * @ORM\JoinColumn(name="gemproduct_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Product", inversedBy="reviews")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id")
      */
-    protected $gemproduct;
+    protected $product;
 
 
     public function __construct()
@@ -164,25 +164,25 @@ class Review
     }
 
     /**
-     * Set gemproduct
+     * Set product
      *
-     * @param \angularjsBundle\Entity\GemProduct $gemproduct
+     * @param \angularjsBundle\Entity\Product $product
      * @return Review
      */
-    public function setGemproduct(\angularjsBundle\Entity\GemProduct $gemproduct = null)
+    public function setProduct(\angularjsBundle\Entity\Product $product = null)
     {
-        $this->gemproduct = $gemproduct;
+        $this->gemproduct = $product;
 
         return $this;
     }
 
     /**
-     * Get gemproduct
+     * Get product
      *
-     * @return \angularjsBundle\Entity\GemProduct 
+     * @return \angularjsBundle\Entity\Product 
      */
-    public function getGemproduct()
+    public function getProduct()
     {
-        return $this->gemproduct;
+        return $this->product;
     }
 }
