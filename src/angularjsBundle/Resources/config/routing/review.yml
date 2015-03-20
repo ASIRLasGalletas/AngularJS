@@ -1,0 +1,30 @@
+review:
+    path:     /
+    defaults: { _controller: "angularjsBundle:Review:index" }
+
+review_show:
+    path:     /{id}/show
+    defaults: { _controller: "angularjsBundle:Review:show" }
+
+review_new:
+    path:     /new
+    defaults: { _controller: "angularjsBundle:Review:new" }
+
+review_create:
+    path:     /create
+    defaults: { _controller: "angularjsBundle:Review:create" }
+    methods:  POST
+
+review_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "angularjsBundle:Review:edit" }
+
+review_update:
+    path:     /{id}/update
+    defaults: { _controller: "angularjsBundle:Review:update" }
+    methods:  [POST, PUT]
+
+review_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "angularjsBundle:Review:delete" }
+    methods:  [POST, DELETE]
