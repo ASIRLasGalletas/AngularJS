@@ -1,10 +1,13 @@
 /* CSS Específico */
 html{
-	overflow-x:hidden;
+overflow-x:hidden;
 }
 body{
   max-width: 800px;
   margin: 0 auto;
+}
+body, body.modal{
+padding-right:0 !important;
 }
 h2{
   font-size:22px;
