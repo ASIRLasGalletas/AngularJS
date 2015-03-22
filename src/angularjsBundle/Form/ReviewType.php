@@ -19,7 +19,7 @@ class ReviewType extends AbstractType
             ->add('body')
             ->add('author')
             ->add('created')
-            ->add('gemproduct')
+            ->add('product')
         ;
     }
     
