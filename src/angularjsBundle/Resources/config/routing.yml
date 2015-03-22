@@ -2,6 +2,10 @@ angularjs_review:
     resource: "@angularjsBundle/Resources/config/routing/review.yml"
     prefix:   /review
 
+angularjs_product:
+    resource: "@angularjsBundle/Resources/config/routing/product.yml"
+    prefix:   /product
+
 angularjs_homepagetmp:
     path: /
     defaults:
