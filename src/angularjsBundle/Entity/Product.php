@@ -3,6 +3,7 @@
 namespace angularjsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Product
@@ -71,19 +72,24 @@ class Product
     private $faces;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ProductImage", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="ProductImage", mappedBy="product")
      */
     private $images;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Review", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="Review", mappedBy="product")
      */
     private $reviews;
 
 
     public function __construct()
     {
-        $this->reviews = newArrayCollection();
+        $this->reviews = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
     /**
@@ -258,22 +264,32 @@ class Product
     }
 
     /**
-     * Set images
+     * Add images
      *
-     * @param array $images
-     * @return GemProduct
+     * @param \angularjsBundle\Entity\ProductImage $images
+     * @return Product
      */
-    public function setImages($images)
+    public function addImage(\angularjsBundle\Entity\ProductImage $images)
     {
-        $this->images = $images;
+        $this->images[] = $images;
 
         return $this;
     }
 
     /**
+     * Remove images
+     *
+     * @param \angularjsBundle\Entity\ProductImage $images
+     */
+    public function removeImage(\angularjsBundle\Entity\ProductImage $images)
+    {
+        $this->images->removeElement($images);
+    }
+
+    /**
      * Get images
      *
-     * @return array 
+     * @return \Doctrine\Common\Collections\Collection 
      */
     public function getImages()
     {
@@ -284,7 +300,7 @@ class Product
      * Add reviews
      *
      * @param \angularjsBundle\Entity\Review $reviews
-     * @return GemProduct
+     * @return Product
      */
     public function addReview(\angularjsBundle\Entity\Review $reviews)
     {
@@ -311,28 +327,5 @@ class Product
     public function getReviews()
     {
         return $this->reviews;
-    }
-
-    /**
-     * Add images
-     *
-     * @param \angularjsBundle\Entity\ProductImage $images
-     * @return Product
-     */
-    public function addImage(\angularjsBundle\Entity\ProductImage $images)
-    {
-        $this->images[] = $images;
-
-        return $this;
-    }
-
-    /**
-     * Remove images
-     *
-     * @param \angularjsBundle\Entity\ProductImage $images
-     */
-    public function removeImage(\angularjsBundle\Entity\ProductImage $images)
-    {
-        $this->images->removeElement($images);
     }
 }

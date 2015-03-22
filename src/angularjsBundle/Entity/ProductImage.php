@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
 class ProductImage
 {
@@ -67,14 +68,14 @@ class ProductImage
     {
         // the absolute directory path where uploaded
         // documents should be saved
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return __DIR__.'/../../../web/'.$this->getUploadDir();
     }
 
     protected function getUploadDir()
     {
         // get rid of the __DIR__ so it doesn't screw up
         // when displaying uploaded doc/image in the view.
-        return 'uploads/images/product';
+        return 'uploads/images/product/'.$this->getProduct()->getId();
     }
 
     /**
@@ -108,16 +109,32 @@ class ProductImage
         // target filename to move to
         $this->getFile()->move(
             $this->getUploadRootDir(),
-            $this->getFile()->getClientOriginalName()
+            $this->getName().$this->getFile()->getClientOriginalName()
         );
 
         // set the path property to the filename where you've saved the file
-        $this->path = $this->getFile()->getClientOriginalName();
+        $this->path = $this->getName().$this->getFile()->getClientOriginalName();
 
         // clean up the file property as you won't need it anymore
         $this->file = null;
     }
 
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        $file = $this->getAbsolutePath();
+        if ($file) {
+            unlink($file);
+        }
+    }
+
+
+    public function __toString()
+    {
+        return $this->getPath() . ' ' . $this->getProduct()->getName();
+    }
 
     /**
      * Get id
@@ -153,29 +170,6 @@ class ProductImage
     }
 
     /**
-     * Set product
-     *
-     * @param \angularjsBundle\Entity\Product $product
-     * @return ProductImage
-     */
-    public function setProduct(\angularjsBundle\Entity\Product $product = null)
-    {
-        $this->product = $product;
-
-        return $this;
-    }
-
-    /**
-     * Get product
-     *
-     * @return \angularjsBundle\Entity\Product
-     */
-    public function getProduct()
-    {
-        return $this->product;
-    }
-
-    /**
      * Set path
      *
      * @param string $path
@@ -196,5 +190,28 @@ class ProductImage
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set product
+     *
+     * @param \angularjsBundle\Entity\Product $product
+     * @return ProductImage
+     */
+    public function setProduct(\angularjsBundle\Entity\Product $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \angularjsBundle\Entity\Product 
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

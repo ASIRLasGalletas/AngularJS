@@ -16,7 +16,7 @@ class ProductImageType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('path')
+            ->add('file')
             ->add('product')
         ;
     }

@@ -61,6 +61,11 @@ class Review
         $this->setCreated(new \DateTime());
     }
 
+    public function __toString()
+    {
+        return $this->getAuthor() . ' ' . $this->getProduct()->getName();
+    }
+
     /**
      * Get id
      *
@@ -171,7 +176,7 @@ class Review
      */
     public function setProduct(\angularjsBundle\Entity\Product $product = null)
     {
-        $this->gemproduct = $product;
+        $this->product = $product;
 
         return $this;
     }

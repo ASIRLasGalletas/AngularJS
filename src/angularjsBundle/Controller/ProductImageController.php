@@ -41,6 +41,7 @@ class ProductImageController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $entity->upload();
             $em->persist($entity);
             $em->flush();
 
@@ -150,36 +151,6 @@ class ProductImageController extends Controller
         $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
-    }
-    /**
-     * Edits an existing ProductImage entity.
-     *
-     */
-    public function updateAction(Request $request, $id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('angularjsBundle:ProductImage')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find ProductImage entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
-        $editForm->handleRequest($request);
-
-        if ($editForm->isValid()) {
-            $em->flush();
-
-            return $this->redirect($this->generateUrl('image_edit', array('id' => $id)));
-        }
-
-        return $this->render('angularjsBundle:ProductImage:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
     }
     /**
      * Deletes a ProductImage entity.

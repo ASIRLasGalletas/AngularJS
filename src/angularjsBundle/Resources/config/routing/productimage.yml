@@ -15,15 +15,6 @@ image_create:
     defaults: { _controller: "angularjsBundle:ProductImage:create" }
     methods:  POST
 
-image_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "angularjsBundle:ProductImage:edit" }
-
-image_update:
-    path:     /{id}/update
-    defaults: { _controller: "angularjsBundle:ProductImage:update" }
-    methods:  [POST, PUT]
-
 image_delete:
     path:     /{id}/delete
     defaults: { _controller: "angularjsBundle:ProductImage:delete" }

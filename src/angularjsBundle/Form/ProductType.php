@@ -22,8 +22,6 @@ class ProductType extends AbstractType
             ->add('rarity')
             ->add('hardness')
             ->add('faces')
-            ->add('images')
-            ->add('reviews')
         ;
     }
     
