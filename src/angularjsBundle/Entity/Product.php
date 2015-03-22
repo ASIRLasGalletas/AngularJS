@@ -72,12 +72,12 @@ class Product
     private $faces;
 
     /**
-     * @ORM\OneToMany(targetEntity="ProductImage", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="ProductImage", mappedBy="product", cascade={"remove"})
      */
     private $images;
 
     /**
-     * @ORM\OneToMany(targetEntity="Review", mappedBy="product")
+     * @ORM\OneToMany(targetEntity="Review", mappedBy="product", cascade={"remove"})
      */
     private $reviews;
 
