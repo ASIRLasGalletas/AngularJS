@@ -1,3 +1,7 @@
+angularjs_image:
+    resource: "@angularjsBundle/Resources/config/routing/productimage.yml"
+    prefix:   /image
+
 angularjs_review:
     resource: "@angularjsBundle/Resources/config/routing/review.yml"
     prefix:   /review
