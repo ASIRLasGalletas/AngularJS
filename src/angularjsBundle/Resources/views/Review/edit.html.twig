@@ -1,6 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle:Review:index.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('review_edit', { 'id': entity.id }) }}">Edit</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>Review edit</h1>
 
     {{ form(edit_form) }}

@@ -1,11 +1,17 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle::admin.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('image') }}">Images</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>ProductImage list</h1>
 
     <table class="records_list">
         <thead>
             <tr>
+                <th>Img</th>
                 <th>Id</th>
                 <th>Name</th>
                 <th>Path</th>
@@ -15,6 +21,7 @@
         <tbody>
         {% for entity in entities %}
             <tr>
+                <td><img src="{{ entity.getWebPath() }}" /></td>
                 <td><a href="{{ path('image_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.path }}</td>
@@ -37,4 +44,4 @@
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}

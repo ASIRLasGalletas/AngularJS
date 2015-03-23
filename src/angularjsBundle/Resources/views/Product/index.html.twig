@@ -1,6 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle::admin.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('product') }}">Product</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>Product list</h1>
 
     <table class="records_list">
@@ -50,4 +55,4 @@
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}

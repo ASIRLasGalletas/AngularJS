@@ -1,6 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle:Product:index.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('product_new') }}">New</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>Product creation</h1>
 
     {{ form(form) }}

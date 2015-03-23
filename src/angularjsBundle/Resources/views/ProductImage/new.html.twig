@@ -1,6 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle:ProductImage:index.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('image_new') }}">New</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>ProductImage creation</h1>
 
     {{ form(form) }}

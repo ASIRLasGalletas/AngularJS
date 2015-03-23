@@ -1,14 +1,20 @@
+admin:
+    path: /admin
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    'angularjsBundle::admin.html.twig'
+
 angularjs_image:
     resource: "@angularjsBundle/Resources/config/routing/productimage.yml"
-    prefix:   /image
+    prefix:   /admin/image
 
 angularjs_review:
     resource: "@angularjsBundle/Resources/config/routing/review.yml"
-    prefix:   /review
+    prefix:   /admin/review
 
 angularjs_product:
     resource: "@angularjsBundle/Resources/config/routing/product.yml"
-    prefix:   /product
+    prefix:   /admin/product
 
 angularjs_homepagetmp:
     path: /

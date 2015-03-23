@@ -1,6 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle:Review:index.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('review_show', { 'id': entity.id }) }}">Show</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>Review</h1>
 
     <table class="record_properties">

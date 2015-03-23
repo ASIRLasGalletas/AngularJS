@@ -1,6 +1,11 @@
-{% extends '::base.html.twig' %}
+{% extends 'angularjsBundle::admin.html.twig' %}
 
-{% block body -%}
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('review') }}">Review</a></li>
+{% endblock %}
+
+{% block content %}
     <h1>Review list</h1>
 
     <table class="records_list">
@@ -44,4 +49,4 @@
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}
