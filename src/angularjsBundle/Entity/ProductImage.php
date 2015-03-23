@@ -61,7 +61,7 @@ class ProductImage
         // Return a path for use in tempaltes or null
         return null === $this->path
             ? null
-            : $this->getUploadDir().'/'.$this->path;
+            : '/'.$this->getUploadDir().'/'.$this->path;
     }
 
     protected function getUploadRootDir()
