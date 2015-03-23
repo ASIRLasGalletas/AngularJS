@@ -1,0 +1,21 @@
+{% extends 'angularjsBundle:Product:index.html.twig' %}
+
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('product_edit', { 'id': entity.id }) }}">Edit</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>Product edit</h1>
+
+    {{ form(edit_form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('product') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

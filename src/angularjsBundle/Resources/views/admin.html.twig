@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}Admin{% endblock %}
+
+{% block body %}
+    <!-- Navigation bar top fixed -->
+    <nav class="navbar navbar-default navbar-static-top"><div class="container">
+        <!-- Header of nav -->
+        <header class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="navbar-brand">{{ block('title') }}</span>
+        </header>
+        <div id="navbar" class="navbar-collapse collapse">
+            <!-- Commons spacial links in right position -->
+            <!-- Links for navigation -->
+            <ul class="nav navbar-nav">
+            {% block navigation %}
+            <li><a href="{{ path('admin') }}">Admin</a></li>
+            {% endblock %}
+        </div>
+    </div></nav>
+    {% block content %}
+    <h1>Admin</h1>
+    <ul>
+        <li><a href="{{ path('product') }}">Products</a></li>
+        <li><a href="{{ path('review') }}">Reviews</a></li>
+        <li><a href="{{ path('image') }}">Images</a></li>
+    </ul>
+    {% endblock %}
+{% endblock %}
+
+{% block stylesheets %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-theme.css') }}" />
+{% endblock %}
+
+{% block javascripts %}
+    <!-- jQuery -->
+    <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+    <!-- Bootstrap JavaScript -->
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+{% endblock %}

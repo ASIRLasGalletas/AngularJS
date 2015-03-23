@@ -1,0 +1,36 @@
+{% extends 'angularjsBundle:ProductImage:index.html.twig' %}
+
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('image_show', { 'id': entity.id }) }}">Show</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>ProductImage</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ entity.path }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <img src="{{ entity.getWebPath() }}" />
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('image') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

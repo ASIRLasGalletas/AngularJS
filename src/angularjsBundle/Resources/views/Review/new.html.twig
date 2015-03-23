@@ -1,0 +1,20 @@
+{% extends 'angularjsBundle:Review:index.html.twig' %}
+
+{% block navigation %}
+    {{ parent() }}
+    <li><a href="{{ path('review_new') }}">New</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>Review creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('review') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
