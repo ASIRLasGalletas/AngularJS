@@ -81,6 +81,10 @@ img{
     background: #FAAC58;
     border: 0;
 }
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background: #FAAC58;
+    border: 0;
+}
 .nav-pills > li.active > a:hover,
 .btn-primary:hover{
     background: #FAAC58;
@@ -94,6 +98,12 @@ img{
 .form-control-small{
     float:left;
     width:256px;
+}
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #F5D0A9;
 }
 
 /* CSS Responsive para pantallas menores a 820px */
