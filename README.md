@@ -23,15 +23,11 @@ To Do:
        - name: string (32)
  - API Rest
     - Product list
-       - GET /api/product/
-    - Review list
-       - GET /api/product/[id]/review/
+       - GET /api/product
     - Product
-       - GET /api/product/[id]/
-       - PUT /api/product/[id]/
-       - DELETE /api/product/[id]/
+       - GET PUT DELETE /api/product/[id]
     - Review
-       - POST /api/product/[id]/review/
+       - GET POST /api/product/[id]/review
  - CSS
     - Usar unidades relativas en lugar de fijas (pixeles)
     - Mejorar el responsive de la maquetación con el uso de grillas y
