@@ -16,12 +16,13 @@ angularjs_product:
     resource: "@angularjsBundle/Resources/config/routing/product.yml"
     prefix:   /admin/product
 
-angularjs_homepagetmp:
+angularjs_homepage:
     path: /
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    'angularjsBundle:Default:index.html.twig'
 
-angularjs_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: angularjsBundle:Default:index }
+angularjs_api:
+    type:  rest
+    prefix:   /api
+    resource: "@angularjsBundle/Resources/config/routing/api.yml"

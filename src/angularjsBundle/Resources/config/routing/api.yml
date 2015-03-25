@@ -1,0 +1,14 @@
+angularjs_api_product_list:
+    path:     /product
+    defaults: { _controller: "angularjsBundle:Productrest:product", _format: "json" }
+    methods:  GET
+
+angularjs_api_product:
+    path:     /product/{id}
+    defaults: { _controller: "angularjsBundle:Productrest:product", _format: "json" }
+    methods:  GET
+
+angularjs_api_product_review:
+    path:     /product/{id}/review
+    defaults: { _controller: "angularjsBundle:Productrest:review", _format: "json" }
+    methods:  [GET, POST]
