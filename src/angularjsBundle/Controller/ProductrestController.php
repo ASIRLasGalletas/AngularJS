@@ -19,8 +19,7 @@ class ProductrestController extends FOSRestController
             $data = $em->getRepository('angularjsBundle:Product')->find($id);
         }
         $view = $this->view($data, 200)
-        //->setTemplate('angularjsBundle:API:product.html.twig')
-        ->setTemplate('angularjsBundle::base.html.twig')
+        ->setTemplate('angularjsBundle:API:product.html.twig')
         ->setTemplateVar('products');
         return $this->handleView($view);
     }
@@ -40,9 +39,8 @@ class ProductrestController extends FOSRestController
         }
         $data = $em->getRepository('angularjsBundle:Product')->find($id)->getReviews();
         $view = $this->view($data, 200)
-        //->setTemplate('angularjsBundle:API:product.html.twig')
-        ->setTemplate('angularjsBundle::base.html.twig')
-        ->setTemplateVar('products');
+        ->setTemplate('angularjsBundle:API:review.html.twig')
+        ->setTemplateVar('reviews');
         return $this->handleView($view);
     }
 

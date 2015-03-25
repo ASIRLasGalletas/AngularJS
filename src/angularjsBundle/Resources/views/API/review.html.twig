@@ -1,0 +1,31 @@
+{% extends 'angularjsBundle::base.html.twig' %}
+
+{# Configuration of AngularJS attributes in parent template #}
+{#
+{% set ngHtmlApp = 'gemStore' %}
+{% set ngBodyCtrl = 'StoreController as store' %}
+#}
+
+{% block title %}Piedras preciosas hechas a mano{% endblock %}
+
+{% block stylesheets %}{{ parent() }}
+  <link rel="stylesheet" href="{{ asset('/bundles/angularjs/css/bootstrap-custom-theme.css') }}" />
+{% endblock %}
+
+{#
+{% block javascripts %}{{ parent() }}
+  <!-- App JavaScript -->
+  <script type="text/javascript" src="{{ asset('/bundles/angularjs/js/products.js') }}">
+  </script>
+  <script type="text/javascript" src="{{ asset('/bundles/angularjs/js/app.js') }}">
+  </script>
+  <script type="text/javascript" src="{{ asset('/bundles/angularjs/js/api.js') }}">
+  </script>
+{% endblock %}
+#}
+
+{% block body %}
+  {% for review in reviews %}
+    {{ review.author }}<br/>
+  {% endfor %}
+{% endblock %}
